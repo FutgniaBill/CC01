@@ -11,6 +11,7 @@ public class Ecole
 	public string PhoneNumber { get; set; }
 	public string email { get; set; }
 	public byte Logo { get; set; }
+
 	public Ecole()
 	{
 
