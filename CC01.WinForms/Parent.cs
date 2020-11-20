@@ -24,7 +24,7 @@ namespace CC01.WinForms
 
         private void ecoleToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            new FrmSchoolEdit().Show();
+            new FrmEcoleList().Show();
         }
 
         private void etudiantToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -49,12 +49,17 @@ namespace CC01.WinForms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            new FrmSchoolEdit().Show();
+            new FrmEcoleList().Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FrmParent_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

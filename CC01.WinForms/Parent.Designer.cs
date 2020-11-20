@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.editerUneÉcoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editerUnÉtudiantToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ecoleToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.etudiantToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.editerUnÉtudiantToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editerUneÉcoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.etudiantToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ecoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,46 +54,6 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // editerUneÉcoleToolStripMenuItem
-            // 
-            this.editerUneÉcoleToolStripMenuItem.Image = global::CC01.WinForms.Properties.Resources.school_64px;
-            this.editerUneÉcoleToolStripMenuItem.Name = "editerUneÉcoleToolStripMenuItem";
-            this.editerUneÉcoleToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
-            this.editerUneÉcoleToolStripMenuItem.Text = "Editer une école";
-            this.editerUneÉcoleToolStripMenuItem.Click += new System.EventHandler(this.editerUneÉcoleToolStripMenuItem_Click);
-            // 
-            // editerUnÉtudiantToolStripMenuItem
-            // 
-            this.editerUnÉtudiantToolStripMenuItem.Image = global::CC01.WinForms.Properties.Resources.student_male_64px;
-            this.editerUnÉtudiantToolStripMenuItem.Name = "editerUnÉtudiantToolStripMenuItem";
-            this.editerUnÉtudiantToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
-            this.editerUnÉtudiantToolStripMenuItem.Text = "Editer un étudiant";
-            this.editerUnÉtudiantToolStripMenuItem.Click += new System.EventHandler(this.editerUnÉtudiantToolStripMenuItem_Click);
-            // 
-            // ecoleToolStripMenuItem1
-            // 
-            this.ecoleToolStripMenuItem1.Image = global::CC01.WinForms.Properties.Resources.school_64px;
-            this.ecoleToolStripMenuItem1.Name = "ecoleToolStripMenuItem1";
-            this.ecoleToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.ecoleToolStripMenuItem1.Text = "Ecole";
-            this.ecoleToolStripMenuItem1.Click += new System.EventHandler(this.ecoleToolStripMenuItem1_Click);
-            // 
-            // etudiantToolStripMenuItem1
-            // 
-            this.etudiantToolStripMenuItem1.Image = global::CC01.WinForms.Properties.Resources.student_male_64px;
-            this.etudiantToolStripMenuItem1.Name = "etudiantToolStripMenuItem1";
-            this.etudiantToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.etudiantToolStripMenuItem1.Text = "Etudiants";
-            this.etudiantToolStripMenuItem1.Click += new System.EventHandler(this.etudiantToolStripMenuItem1_Click);
-            // 
-            // quitterToolStripMenuItem
-            // 
-            this.quitterToolStripMenuItem.Image = global::CC01.WinForms.Properties.Resources.door_sensor_alarmed_48px;
-            this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.quitterToolStripMenuItem.Text = "Quitter";
-            this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
-            // 
             // menuToolStripMenuItem1
             // 
             this.menuToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -105,18 +65,58 @@
             this.menuToolStripMenuItem1.Size = new System.Drawing.Size(80, 26);
             this.menuToolStripMenuItem1.Text = "Menu";
             // 
+            // ecoleToolStripMenuItem1
+            // 
+            this.ecoleToolStripMenuItem1.Image = global::CC01.WinForms.Properties.Resources.school_64px;
+            this.ecoleToolStripMenuItem1.Name = "ecoleToolStripMenuItem1";
+            this.ecoleToolStripMenuItem1.Size = new System.Drawing.Size(153, 26);
+            this.ecoleToolStripMenuItem1.Text = "Ecole";
+            this.ecoleToolStripMenuItem1.Click += new System.EventHandler(this.ecoleToolStripMenuItem1_Click);
+            // 
+            // etudiantToolStripMenuItem1
+            // 
+            this.etudiantToolStripMenuItem1.Image = global::CC01.WinForms.Properties.Resources.student_male_64px;
+            this.etudiantToolStripMenuItem1.Name = "etudiantToolStripMenuItem1";
+            this.etudiantToolStripMenuItem1.Size = new System.Drawing.Size(153, 26);
+            this.etudiantToolStripMenuItem1.Text = "Etudiants";
+            this.etudiantToolStripMenuItem1.Click += new System.EventHandler(this.etudiantToolStripMenuItem1_Click);
+            // 
+            // quitterToolStripMenuItem
+            // 
+            this.quitterToolStripMenuItem.Image = global::CC01.WinForms.Properties.Resources.door_sensor_alarmed_48px;
+            this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(153, 26);
+            this.quitterToolStripMenuItem.Text = "Quitter";
+            this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
+            // 
+            // editerUnÉtudiantToolStripMenuItem
+            // 
+            this.editerUnÉtudiantToolStripMenuItem.Image = global::CC01.WinForms.Properties.Resources.student_male_64px;
+            this.editerUnÉtudiantToolStripMenuItem.Name = "editerUnÉtudiantToolStripMenuItem";
+            this.editerUnÉtudiantToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
+            this.editerUnÉtudiantToolStripMenuItem.Text = "Editer un étudiant";
+            this.editerUnÉtudiantToolStripMenuItem.Click += new System.EventHandler(this.editerUnÉtudiantToolStripMenuItem_Click);
+            // 
+            // editerUneÉcoleToolStripMenuItem
+            // 
+            this.editerUneÉcoleToolStripMenuItem.Image = global::CC01.WinForms.Properties.Resources.school_64px;
+            this.editerUneÉcoleToolStripMenuItem.Name = "editerUneÉcoleToolStripMenuItem";
+            this.editerUneÉcoleToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
+            this.editerUneÉcoleToolStripMenuItem.Text = "Editer une école";
+            this.editerUneÉcoleToolStripMenuItem.Click += new System.EventHandler(this.editerUneÉcoleToolStripMenuItem_Click);
+            // 
             // etudiantToolStripMenuItem
             // 
             this.etudiantToolStripMenuItem.Image = global::CC01.WinForms.Properties.Resources.student_male_64px;
             this.etudiantToolStripMenuItem.Name = "etudiantToolStripMenuItem";
-            this.etudiantToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.etudiantToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
             this.etudiantToolStripMenuItem.Text = "Etudiant";
             // 
             // ecoleToolStripMenuItem
             // 
             this.ecoleToolStripMenuItem.Image = global::CC01.WinForms.Properties.Resources.school_64px;
             this.ecoleToolStripMenuItem.Name = "ecoleToolStripMenuItem";
-            this.ecoleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.ecoleToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
             this.ecoleToolStripMenuItem.Text = "Ecole";
             // 
             // menuToolStripMenuItem
@@ -142,6 +142,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Parent";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmParent_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
