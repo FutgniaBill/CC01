@@ -45,7 +45,7 @@ namespace CC01.WinForms
         }
         private void FrmStudentEdit_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -71,7 +71,6 @@ namespace CC01.WinForms
                     txtFirstName.Text,
                     txtBornOn.Text,
                     txtAt.Text,
-
                     long.Parse(txtContact.Text),
                     txtEmail.Text,
                     !string.IsNullOrEmpty(pictureBox1.ImageLocation) ? File.ReadAllBytes(pictureBox1.ImageLocation) : this.oldEtudiant?.Picture

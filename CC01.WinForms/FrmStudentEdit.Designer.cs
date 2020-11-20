@@ -87,7 +87,7 @@
             this.btnSave.Location = new System.Drawing.Point(13, 530);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(312, 81);
-            this.btnSave.TabIndex = 19;
+            this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -107,7 +107,7 @@
             this.txtLastName.Location = new System.Drawing.Point(116, 38);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(312, 22);
-            this.txtLastName.TabIndex = 13;
+            this.txtLastName.TabIndex = 0;
             this.txtLastName.TextChanged += new System.EventHandler(this.txtLastName_TextChanged);
             // 
             // btnCancel
@@ -119,7 +119,7 @@
             this.btnCancel.Location = new System.Drawing.Point(331, 530);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(367, 81);
-            this.btnCancel.TabIndex = 21;
+            this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -141,7 +141,7 @@
             this.txtIdentified.Location = new System.Drawing.Point(385, 326);
             this.txtIdentified.Name = "txtIdentified";
             this.txtIdentified.Size = new System.Drawing.Size(311, 22);
-            this.txtIdentified.TabIndex = 12;
+            this.txtIdentified.TabIndex = 4;
             // 
             // toolTip1
             // 
@@ -186,7 +186,7 @@
             this.txtFirstName.Location = new System.Drawing.Point(116, 113);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(312, 22);
-            this.txtFirstName.TabIndex = 26;
+            this.txtFirstName.TabIndex = 1;
             this.txtFirstName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label8
@@ -205,7 +205,7 @@
             this.txtBornOn.Location = new System.Drawing.Point(384, 208);
             this.txtBornOn.Name = "txtBornOn";
             this.txtBornOn.Size = new System.Drawing.Size(312, 22);
-            this.txtBornOn.TabIndex = 28;
+            this.txtBornOn.TabIndex = 2;
             // 
             // label3
             // 
@@ -223,7 +223,7 @@
             this.txtAt.Location = new System.Drawing.Point(385, 269);
             this.txtAt.Name = "txtAt";
             this.txtAt.Size = new System.Drawing.Size(312, 22);
-            this.txtAt.TabIndex = 30;
+            this.txtAt.TabIndex = 3;
             // 
             // label4
             // 
@@ -241,7 +241,7 @@
             this.txtEmail.Location = new System.Drawing.Point(25, 464);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(330, 22);
-            this.txtEmail.TabIndex = 34;
+            this.txtEmail.TabIndex = 6;
             // 
             // label9
             // 
@@ -259,7 +259,7 @@
             this.txtContact.Location = new System.Drawing.Point(384, 387);
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(312, 22);
-            this.txtContact.TabIndex = 32;
+            this.txtContact.TabIndex = 5;
             // 
             // FrmStudentEdit
             // 

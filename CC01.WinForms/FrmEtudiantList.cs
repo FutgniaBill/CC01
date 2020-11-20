@@ -38,12 +38,13 @@ namespace CC01.WinForms
             var etudiants = etudiantBLO.GetBy
             (
                 x =>
-                x.Identified.ToLower().Contains(value) ||
-                x.LastName.ToLower().Contains(value)||
+                x.LastName.ToLower().Contains(value) ||
                 x.FirstName.ToLower().Contains(value) ||
-                x.BornOn.ToLower().Contains(value)||
-                x.At.ToLower().Contains(value)
-
+                x.BornOn.ToLower().Contains(value) ||
+                x.At.ToLower().Contains(value)||
+                x.Identified.ToLower().Contains(value) ||
+                x.Contact.ToString().ToLower().Contains(value)||
+                x.Email.ToLower().Contains(value)
             ).OrderBy(x => x.Identified).ToArray();
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = etudiants;
@@ -118,37 +119,35 @@ namespace CC01.WinForms
         }
 
         private void btnPrint_Click_1(object sender, EventArgs e)
-        { }
-        //private void btnPrint_Click_1(object sender, EventArgs e)
-        //{
-        //    List<ProductListPrint> items = new List<ProductListPrint>();
-        //    Ecole ecole = ecoleBLO.GetEcole();
-        //    for (int i = 0; i < dataGridView1.Rows.Count; i++)
-        //    {
-        //        Etudiant et = dataGridView1.Rows[i].DataBoundItem as Etudiant;
-        //        items.Add
-        //        (
-        //           new ProductListPrint
-        //           (
-        //               et.Identified,
-        //               et.LastName,
-        //               et.FirstName,
-        //               et.BornOn,
-        //               et.At,
-        //               et.Contact,
-        //               et.Email,
-        //               et.Picture,
-        //               ecole?.Name,
-        //               ecole?.Email,
-        //               ecole?.PhoneNumber.ToString(),
-        //               ecole?.PostalCode,
-        //               !string.IsNullOrEmpty(ecole?.Logo) ? File.ReadAllBytes(ecole?.Logo) : null
-        //            )
-        //        );
-        //    }
-        //    Form f = new FrmPreview("ProductListRpt.rdlc", items);
-        //    f.Show();
-        //}
+        {
+            List<StudentListPrint> items = new List<StudentListPrint>();
+            //Ecole ecole = ecoleBLO.GetEcole();
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                Etudiant E = dataGridView1.Rows[i].DataBoundItem as Etudiant;
+                items.Add
+                (
+                   new StudentListPrint
+                   (
+                       E.Identified,
+                       E.LastName,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+                       E.FirstName
+                       //p.BornOn,
+                       //p.At,
+                       //p.Contact,
+                       //p.Email,
+                       //p.Picture,
+                       //ecole?.Name,
+                       //ecole?.Email,
+                       //ecole?.PhoneNumber.ToString(),
+                       //ecole?.PostalCode,
+                       //!string.IsNullOrEmpty(ecole?.Logo) ? File.ReadAllBytes(ecole?.Logo) : null
+                    )
+                );
+            }
+            Form f = new FrmPreview("StudentListRpt.rdlc",items);
+            f.Show();
+        }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

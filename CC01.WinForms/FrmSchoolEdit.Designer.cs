@@ -75,7 +75,7 @@
             this.btnSave.Location = new System.Drawing.Point(12, 290);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(312, 81);
-            this.btnSave.TabIndex = 23;
+            this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             // 
@@ -93,7 +93,7 @@
             this.txtEmail.Location = new System.Drawing.Point(12, 118);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(312, 22);
-            this.txtEmail.TabIndex = 17;
+            this.txtEmail.TabIndex = 1;
             // 
             // btnCancel
             // 
@@ -102,7 +102,7 @@
             this.btnCancel.Location = new System.Drawing.Point(330, 290);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(206, 81);
-            this.btnCancel.TabIndex = 24;
+            this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             // 
@@ -121,7 +121,7 @@
             this.txtName.Location = new System.Drawing.Point(12, 34);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(312, 22);
-            this.txtName.TabIndex = 16;
+            this.txtName.TabIndex = 0;
             // 
             // toolTip1
             // 
@@ -153,7 +153,7 @@
             this.txtPostalCode.Location = new System.Drawing.Point(177, 202);
             this.txtPostalCode.Name = "txtPostalCode";
             this.txtPostalCode.Size = new System.Drawing.Size(147, 22);
-            this.txtPostalCode.TabIndex = 20;
+            this.txtPostalCode.TabIndex = 3;
             // 
             // label7
             // 
@@ -169,7 +169,7 @@
             this.txtPhone.Location = new System.Drawing.Point(12, 202);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(146, 22);
-            this.txtPhone.TabIndex = 19;
+            this.txtPhone.TabIndex = 2;
             // 
             // label6
             // 
