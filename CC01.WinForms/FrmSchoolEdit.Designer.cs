@@ -57,6 +57,7 @@
             this.linkLabel1.TabIndex = 22;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "x";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked_1);
             // 
             // label6
             // 
@@ -67,6 +68,7 @@
             this.label6.Size = new System.Drawing.Size(85, 17);
             this.label6.TabIndex = 27;
             this.label6.Text = "(*) Required";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // txtPhone
             // 
@@ -110,6 +112,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 25;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // toolTip1
             // 
@@ -122,6 +125,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(312, 22);
             this.txtName.TabIndex = 0;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // label1
             // 
@@ -142,6 +146,7 @@
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
             // 
             // txtEmail
             // 
@@ -169,6 +174,7 @@
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
             // 
             // label5
             // 

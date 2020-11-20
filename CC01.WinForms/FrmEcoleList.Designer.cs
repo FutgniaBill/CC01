@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -52,8 +52,8 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -74,6 +74,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(771, 456);
             this.dataGridView1.TabIndex = 30;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnDelete
             // 
@@ -86,6 +87,7 @@
             this.btnDelete.TabIndex = 28;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -98,6 +100,7 @@
             this.btnEdit.TabIndex = 25;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnCancel
             // 
@@ -123,6 +126,7 @@
             this.btnRefresh.TabIndex = 27;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // txtSearch
             // 
@@ -144,6 +148,7 @@
             this.btnAdd.TabIndex = 24;
             this.btnAdd.Text = "New";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lblRowCount
             // 
@@ -167,7 +172,7 @@
             // 
             // Column5
             // 
-            this.Column5.DataPropertyName = "Picture";
+            this.Column5.DataPropertyName = "Logo";
             this.Column5.FillWeight = 50.76144F;
             this.Column5.HeaderText = "LOGO";
             this.Column5.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
@@ -178,7 +183,7 @@
             // 
             // Column1
             // 
-            this.Column1.DataPropertyName = "Identified";
+            this.Column1.DataPropertyName = "Name";
             this.Column1.FillWeight = 112.3097F;
             this.Column1.HeaderText = "Name";
             this.Column1.MinimumWidth = 6;
@@ -187,7 +192,7 @@
             // 
             // Column3
             // 
-            this.Column3.DataPropertyName = "FirstName";
+            this.Column3.DataPropertyName = "PostalCode";
             this.Column3.FillWeight = 112.3097F;
             this.Column3.HeaderText = "PostalCode";
             this.Column3.MinimumWidth = 6;
@@ -196,7 +201,7 @@
             // 
             // Column8
             // 
-            this.Column8.DataPropertyName = "Contact";
+            this.Column8.DataPropertyName = "Phone";
             this.Column8.HeaderText = "PhoneNumber";
             this.Column8.MinimumWidth = 6;
             this.Column8.Name = "Column8";

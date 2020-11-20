@@ -11,41 +11,41 @@ namespace CC01.BLL
 {
     public class EcoleBLO
     {
-        private EcoleDAO ecoleRepo;
-        private string dbFolder;
+        EcoleDAO ecoleRepo;
         public EcoleBLO(string dbFolder)
         {
-            this.dbFolder = dbFolder;
             ecoleRepo = new EcoleDAO(dbFolder);
         }
-        public void CreateEcole(Ecole oldEcole, Ecole newEcole)
+        public void CreateProduct(Ecole ecole)
         {
-            string filename = null;
-            if (!string.IsNullOrEmpty(newEcole.Logo))
-            {
-                string ext = Path.GetExtension(newEcole.Logo);
-                filename = Guid.NewGuid().ToString() + ext;
-                FileInfo fileSource = new FileInfo(newEcole.Logo);
-                string filePath = Path.Combine(dbFolder, "logo", filename);
-                FileInfo fileDest = new FileInfo(filePath);
-                if (!fileDest.Directory.Exists)
-                    fileDest.Directory.Create();
-                fileSource.CopyTo(fileDest.FullName);
-            }
-            newEcole.Logo = filename;
-            ecoleRepo.Add(newEcole);
-
-            if (!string.IsNullOrEmpty(oldEcole.Logo))
-                File.Delete(oldEcole.Logo);
+            ecoleRepo.Add(ecole);
         }
 
-        public Ecole GetEcole()
+        public void DeleteProduct(Ecole ecole)
         {
-            Ecole ecole = ecoleRepo.Get();
-            if (ecole != null)
-                if (!string.IsNullOrEmpty(ecole.Logo))
-                    ecole.Logo = Path.Combine(dbFolder, "logo", ecole.Logo);
-            return ecole;
+            ecoleRepo.Remove(ecole);
+        }
+
+
+        public IEnumerable<Ecole> GetAllProducts()
+        {
+            return ecoleRepo.Find();
+        }
+
+
+        public IEnumerable<Ecole> GetByPostalCode(string postalCode)
+        {
+            return ecoleRepo.Find(x => x.PostalCode == postalCode);
+        }
+
+        public IEnumerable<Ecole> GetBy(Func<Ecole, bool> predicate)
+        {
+            return ecoleRepo.Find(predicate);
+        }
+
+        public void EditProduct(Ecole oldEcole, Ecole newEcole)
+        {
+            ecoleRepo.Set(oldEcole, newEcole);
         }
     }
 }

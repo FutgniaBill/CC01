@@ -13,13 +13,13 @@ namespace CC01.BO
         public string PostalCode { get; set; }
         public long PhoneNumber { get; set; }
         public string Email { get; set; }
-        public string Logo { get; set; }
+        public byte[] Logo { get; set; }
 
         public Ecole()
         {
         }
 
-        public Ecole(string name, string postalCode, long phoneNumber, string email, string logo)
+        public Ecole(string name, string postalCode, long phoneNumber, string email, byte[] logo)
         {
             Name = name;
             PostalCode = postalCode;

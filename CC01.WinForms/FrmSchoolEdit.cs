@@ -1,11 +1,12 @@
 ﻿using CC01.BLL;
 using CC01.BO;
 using System;
-using System.Configuration;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,24 +16,52 @@ namespace CC01.WinForms
 {
     public partial class FrmSchoolEdit : Form
     {
-        private EcoleBLO ecoleBLO;
+        private Action callBack;
         private Ecole oldEcole;
+
         public FrmSchoolEdit()
         {
             InitializeComponent();
-            ecoleBLO = new EcoleBLO(ConfigurationManager.AppSettings["DbFolder"]);
-            oldEcole = ecoleBLO.GetEcole();
-            if (oldEcole != null)
-            {
-                txtEmail.Text = oldEcole.Email;
-                txtName.Text = oldEcole.Name;
-                txtPhone.Text = oldEcole.PhoneNumber.ToString();
-                txtPostalCode.Text = oldEcole.PostalCode;
-                pictureBox1.ImageLocation = oldEcole.Logo;
-            }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        public FrmSchoolEdit(Action callBack):this()
+        {
+            this.callBack = callBack;
+        }
+
+        public FrmSchoolEdit(Ecole ecole, Action callBack) : this(callBack)
+        {
+            this.oldEcole = ecole;
+            txtName.Text = ecole.Name;
+            txtPostalCode.Text = ecole.PostalCode;
+            txtPhone.Text = ecole.PhoneNumber.ToString();
+            txtEmail.Text = ecole.Email;
+            if (ecole.Logo != null)
+                pictureBox1.Image = Image.FromStream(new MemoryStream(ecole.Logo));
+        }
+
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            pictureBox1.ImageLocation = null;
+        }
+
+        private void FrmSchoolEdit_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click_1(object sender, EventArgs e)
+        {
+           Close();
+        }
+
+        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            pictureBox1.ImageLocation = null;
+        }
+
+        private void btnSave_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -44,10 +73,15 @@ namespace CC01.WinForms
                     txtPostalCode.Text,
                     long.Parse(txtPhone.Text),
                     txtEmail.Text,
-                    pictureBox1.ImageLocation
+                   !string.IsNullOrEmpty(pictureBox1.ImageLocation) ? File.ReadAllBytes(pictureBox1.ImageLocation) : this.oldEcole?.Logo
                 );
 
-                ecoleBLO.CreateEcole(oldEcole, newEcole);
+                EcoleBLO ecoleBLO = new EcoleBLO(ConfigurationManager.AppSettings["DbFolder"]);
+
+                if (this.oldEcole == null)
+                    ecoleBLO.CreateProduct(newEcole);
+                else
+                    ecoleBLO.EditProduct(oldEcole, newEcole);
 
                 MessageBox.Show
                 (
@@ -56,10 +90,17 @@ namespace CC01.WinForms
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
                 );
+                if (callBack != null)
+                    callBack();
 
-                Close();
+                if (oldEcole != null)
+                    Close();
 
-
+                txtName.Clear();
+                txtPhone.Clear();
+                txtPostalCode.Focus();
+                txtEmail.Clear();
+         
             }
             catch (TypingException ex)
             {
@@ -73,13 +114,13 @@ namespace CC01.WinForms
             }
             catch (Exception ex)
             {
-                ex.WriteToFile();
+
                 MessageBox.Show
                (
-                   "An error occurred! Please try again later.",
-                   "Erreur",
+                   ex.Message,
+                   "Duplicate error",
                    MessageBoxButtons.OK,
-                   MessageBoxIcon.Error
+                   MessageBoxIcon.Warning
                );
             }
         }
@@ -87,29 +128,24 @@ namespace CC01.WinForms
         private void checkForm()
         {
             string text = string.Empty;
+            txtPostalCode.BackColor = Color.White;
             txtName.BackColor = Color.White;
-            txtEmail.BackColor = Color.White;
-            if (!long.TryParse(txtPhone.Text, out _))
+            if (string.IsNullOrWhiteSpace(txtPostalCode.Text))
             {
-                text += "- Please enter a good phone number ! \n";
-                txtName.BackColor = Color.Pink;
+                text += "- Please enter the PostalCode! \n";
+                txtPostalCode.BackColor = Color.Pink;
             }
             if (string.IsNullOrWhiteSpace(txtName.Text))
             {
                 text += "- Please enter the name ! \n";
-                txtEmail.BackColor = Color.Pink;
+                txtName.BackColor = Color.Pink;
             }
 
             if (!string.IsNullOrEmpty(text))
                 throw new TypingException(text);
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void pictureBox1_Click_1(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Title = "Choose a picture";
@@ -120,12 +156,12 @@ namespace CC01.WinForms
             }
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void label6_Click(object sender, EventArgs e)
         {
-            pictureBox1.ImageLocation = null;
+
         }
 
-        private void FrmSchoolEdit_Load(object sender, EventArgs e)
+        private void txtName_TextChanged(object sender, EventArgs e)
         {
 
         }
