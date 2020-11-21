@@ -1,4 +1,6 @@
-﻿namespace CC01.WinForms
+﻿using System;
+
+namespace CC01.WinForms
 {
     partial class FrmPreview
     {
@@ -48,9 +50,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "FrmPreview";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Preview";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Text = "FrmPreview";
             this.Load += new System.EventHandler(this.FrmPreview_Load);
             this.ResumeLayout(false);
 

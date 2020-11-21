@@ -17,6 +17,7 @@ namespace CC01.WinForms
             Identified = identified;
             LastName = lastName;
             FirstName = firstName;
+
         }
 
     }
