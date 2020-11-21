@@ -32,7 +32,7 @@ namespace CC01.BLL
             return ecoleRepo.Find();
         }
 
-
+        
         public IEnumerable<Ecole> GetByPostalCode(string postalCode)
         {
             return ecoleRepo.Find(x => x.PostalCode == postalCode);
