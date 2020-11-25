@@ -15,13 +15,11 @@ namespace CC01.WinForms
 {
     public partial class FrmEcoleList : Form
     {
-        private EtudiantBLO etudiantBLO;
         private EcoleBLO ecoleBLO;
         public FrmEcoleList()
         {
             InitializeComponent();
             dataGridView1.AutoGenerateColumns = false;
-            etudiantBLO = new EtudiantBLO(ConfigurationManager.AppSettings["DbFolder"]);
             ecoleBLO = new EcoleBLO(ConfigurationManager.AppSettings["DbFolder"]);
         }
 
@@ -41,19 +39,22 @@ namespace CC01.WinForms
             ).OrderBy(x => x.Name).ToArray();
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = ecoles;
-            lblRowCount.Text = $"{dataGridView1.RowCount} rows";
             dataGridView1.ClearSelection();
         }
 
         private void FrmEcoleList_Load(object sender, EventArgs e)
         {
-
+            loadData();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Form f = new FrmSchoolEdit(loadData);
             f.Show();
+        }
+        private void txtSearch_TextChanged_1(object sender, EventArgs e)
+        {
+            loadData();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -101,9 +102,18 @@ namespace CC01.WinForms
             }
         }
 
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnEdit_Click(sender, e);
+        }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            loadData();
         }
     }
 }

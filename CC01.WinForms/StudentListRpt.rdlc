@@ -9,7 +9,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>INFOS ETUDIANTS</Value>
+                <Value>CARTE A IMPRIMER</Value>
                 <Style>
                   <FontSize>16pt</FontSize>
                 </Style>
@@ -226,7 +226,6 @@
                         </Border>
                       </Style>
                     </Image>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>

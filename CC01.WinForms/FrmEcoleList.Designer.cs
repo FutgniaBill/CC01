@@ -30,6 +30,11 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column5 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -38,11 +43,6 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.lblRowCount = new System.Windows.Forms.Label();
             this.Search = new System.Windows.Forms.Label();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,6 +75,51 @@
             this.dataGridView1.Size = new System.Drawing.Size(771, 456);
             this.dataGridView1.TabIndex = 30;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "Logo";
+            this.Column5.FillWeight = 50.76144F;
+            this.Column5.HeaderText = "LOGO";
+            this.Column5.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Name";
+            this.Column1.FillWeight = 112.3097F;
+            this.Column1.HeaderText = "Name";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "PostalCode";
+            this.Column3.FillWeight = 112.3097F;
+            this.Column3.HeaderText = "PostalCode";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "Phone";
+            this.Column8.HeaderText = "PhoneNumber";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "Email";
+            this.Column9.HeaderText = "Email";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
             // 
             // btnDelete
             // 
@@ -136,6 +181,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(772, 22);
             this.txtSearch.TabIndex = 23;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // btnAdd
             // 
@@ -169,51 +215,6 @@
             this.Search.Size = new System.Drawing.Size(53, 17);
             this.Search.TabIndex = 31;
             this.Search.Text = "Search";
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "Email";
-            this.Column9.HeaderText = "Email";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "Phone";
-            this.Column8.HeaderText = "PhoneNumber";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "PostalCode";
-            this.Column3.FillWeight = 112.3097F;
-            this.Column3.HeaderText = "PostalCode";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "Name";
-            this.Column1.FillWeight = 112.3097F;
-            this.Column1.HeaderText = "Name";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "Logo";
-            this.Column5.FillWeight = 50.76144F;
-            this.Column5.HeaderText = "LOGO";
-            this.Column5.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // FrmEcoleList
             // 
