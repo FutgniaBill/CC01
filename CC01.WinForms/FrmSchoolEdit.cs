@@ -79,9 +79,9 @@ namespace CC01.WinForms
                 EcoleBLO ecoleBLO = new EcoleBLO(ConfigurationManager.AppSettings["DbFolder"]);
 
                 if (this.oldEcole == null)
-                    ecoleBLO.CreateProduct(newEcole);
+                    ecoleBLO.CreateEcole(newEcole);
                 else
-                    ecoleBLO.EditProduct(oldEcole, newEcole);
+                    ecoleBLO.EditEcole(oldEcole, newEcole);
 
                 MessageBox.Show
                 (

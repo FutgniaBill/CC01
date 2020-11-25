@@ -32,11 +32,11 @@ namespace CC01.WinForms
         public FrmStudentEdit(Etudiant etudiant, Action callBack) : this(callBack)
         {
             this.oldEtudiant = etudiant;
+            txtIdentified.Text = etudiant.Identified;
             txtLastName.Text = etudiant.LastName;
             txtFirstName.Text = etudiant.FirstName;
             txtBornOn.Text = etudiant.BornOn;
             txtAt.Text = etudiant.At;
-            txtIdentified.Text = etudiant.Identified;
             txtContact.Text = etudiant.Contact.ToString();
             txtEmail.Text = etudiant.Email;
             if (etudiant.Picture != null)
@@ -97,11 +97,11 @@ namespace CC01.WinForms
                 if (oldEtudiant != null)
                     Close();
 
+                txtIdentified.Clear();
                 txtLastName.Clear();
                 txtFirstName.Clear();
                 txtBornOn.Clear();
                 txtAt.Clear();
-                txtIdentified.Clear();
                 txtContact.Clear();
                 txtEmail.Clear();
 
@@ -151,11 +151,11 @@ namespace CC01.WinForms
         private void checkForm()
         {
             string text = string.Empty;
+            txtIdentified.BackColor = Color.White;
             txtLastName.BackColor = Color.White;
             txtFirstName.BackColor = Color.White;
             txtBornOn.BackColor = Color.White;
             txtAt.BackColor = Color.White;
-            txtIdentified.BackColor = Color.White;
             txtContact.BackColor = Color.White;
             txtEmail.BackColor = Color.White;
             if (string.IsNullOrWhiteSpace(txtLastName.Text))
@@ -227,6 +227,12 @@ namespace CC01.WinForms
         private void txtLastName_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Zen.Barcode.CodeQrBarcodeDraw codeQr = Zen.Barcode.BarcodeDrawFactory.CodeQr;
+            pictureBox2.Image=codeQr.Draw(txtIdentified.Text,25);
         }
     }
 }

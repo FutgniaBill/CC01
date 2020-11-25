@@ -76,7 +76,7 @@ namespace CC01.DAL
 
         public void Remove(Ecole ecole)
         {
-            ecoles.Remove(ecole);//base sur School.Equals redefini
+            ecoles.Remove(ecole);
             Save();
         }
 
@@ -89,5 +89,6 @@ namespace CC01.DAL
         {
             return new List<Ecole>(ecoles.Where(predicate).ToArray());
         }
+
     }
 }

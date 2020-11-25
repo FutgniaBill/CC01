@@ -28,6 +28,15 @@ namespace CC01.BO
             Logo = logo;
         }
 
+        public override bool Equals(object obj)
+        {
+            return obj is Ecole ecole &&
+                   Name.Equals(ecole.Name,StringComparison.OrdinalIgnoreCase);
+        }
 
+        public override int GetHashCode()
+        {
+            return 539060726 + EqualityComparer<string>.Default.GetHashCode(Name);
+        }
     }
 }

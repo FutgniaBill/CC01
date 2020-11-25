@@ -18,13 +18,11 @@ namespace CC01.WinForms
     public partial class FrmEtudiantList : Form
     {
         private EtudiantBLO etudiantBLO;
-        private EcoleBLO ecoleBLO;
         public FrmEtudiantList()
         {
             InitializeComponent();
             dataGridView1.AutoGenerateColumns = false;
             etudiantBLO = new EtudiantBLO(ConfigurationManager.AppSettings["DbFolder"]);
-            ecoleBLO = new EcoleBLO(ConfigurationManager.AppSettings["DbFolder"]);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -38,17 +36,16 @@ namespace CC01.WinForms
             var etudiants = etudiantBLO.GetBy
             (
                 x =>
+                x.Identified.ToLower().Contains(value) ||
                 x.LastName.ToLower().Contains(value) ||
                 x.FirstName.ToLower().Contains(value) ||
                 x.BornOn.ToLower().Contains(value) ||
                 x.At.ToLower().Contains(value)||
-                x.Identified.ToLower().Contains(value) ||
                 x.Contact.ToString().ToLower().Contains(value)||
                 x.Email.ToLower().Contains(value)
             ).OrderBy(x => x.Identified).ToArray();
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = etudiants;
-            lblRowCount.Text = $"{dataGridView1.RowCount} rows";
             dataGridView1.ClearSelection();
         }
 
@@ -121,27 +118,19 @@ namespace CC01.WinForms
         private void btnPrint_Click_1(object sender, EventArgs e)
         {
             List<StudentListPrint> items = new List<StudentListPrint>();
-            //Ecole ecole = ecoleBLO.GetEcole();
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 Etudiant E = dataGridView1.Rows[i].DataBoundItem as Etudiant;
+                byte[] Logo = null;
                 items.Add
                 (
                    new StudentListPrint
                    (
+                       E.BornOn,
                        E.Identified,
                        E.LastName,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-                       E.FirstName
-                       //p.BornOn,
-                       //p.At,
-                       //p.Contact,
-                       //p.Email,
-                       //p.Picture,
-                       //ecole?.Name,
-                       //ecole?.Email,
-                       //ecole?.PhoneNumber.ToString(),
-                       //ecole?.PostalCode,
-                       //!string.IsNullOrEmpty(ecole?.Logo) ? File.ReadAllBytes(ecole?.Logo) : null
+                       E.FirstName,
+                       E.Picture
                     )
                 );
             }
@@ -151,7 +140,7 @@ namespace CC01.WinForms
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnEdit_Click(sender, e);
+            
         }
 
         private void lblRowCount_Click(object sender, EventArgs e)

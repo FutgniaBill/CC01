@@ -9,11 +9,11 @@ namespace CC01.BO
     [Serializable]
     public class Etudiant
     {
+        public string Identified { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public string BornOn { get; set; }
         public string At { get; set; }
-        public string Identified { get; set; }
         public long Contact { get; set; }
         public string Email { get; set; }
         public byte[] Picture { get; set; }
@@ -22,13 +22,13 @@ namespace CC01.BO
         {
         }
 
-        public Etudiant(string last_name, string first_name, string born_on, string at, string identified, long contact, string email, byte[] picture)
+        public Etudiant(string identified, string last_name, string first_name, string born_on, string at, long contact, string email, byte[] picture)
         {
+            Identified = identified;
             LastName = last_name;
             FirstName = first_name;
             BornOn = born_on;
             At = at;
-            Identified = identified;
             Contact = contact;
             Email = email;
             Picture = picture;

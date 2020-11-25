@@ -16,7 +16,7 @@ namespace CC01.BLL
         {
             ecoleRepo = new EcoleDAO(dbFolder);
         }
-        public void CreateProduct(Ecole ecole)
+        public void CreateEcole(Ecole ecole)
         {
             ecoleRepo.Add(ecole);
         }
@@ -43,7 +43,7 @@ namespace CC01.BLL
             return ecoleRepo.Find(predicate);
         }
 
-        public void EditProduct(Ecole oldEcole, Ecole newEcole)
+        public void EditEcole(Ecole oldEcole, Ecole newEcole)
         {
             ecoleRepo.Set(oldEcole, newEcole);
         }

@@ -138,7 +138,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnCancel.BackColor = System.Drawing.Color.DarkCyan;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(330, 290);
             this.btnCancel.Name = "btnCancel";
@@ -166,11 +166,11 @@
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.Orange;
-            this.btnSave.ForeColor = System.Drawing.Color.Green;
+            this.btnSave.BackColor = System.Drawing.Color.Crimson;
+            this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Location = new System.Drawing.Point(12, 290);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(312, 81);
+            this.btnSave.Size = new System.Drawing.Size(243, 81);
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -190,7 +190,7 @@
             this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Tomato;
+            this.BackColor = System.Drawing.Color.RoyalBlue;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(550, 423);
             this.Controls.Add(this.label5);
@@ -207,6 +207,7 @@
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.linkLabel1);
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "FrmSchoolEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmSchoolEdit";

@@ -38,11 +38,11 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.lblRowCount = new System.Windows.Forms.Label();
             this.Search = new System.Windows.Forms.Label();
-            this.Column5 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -170,25 +170,21 @@
             this.Search.TabIndex = 31;
             this.Search.Text = "Search";
             // 
-            // Column5
+            // Column9
             // 
-            this.Column5.DataPropertyName = "Logo";
-            this.Column5.FillWeight = 50.76144F;
-            this.Column5.HeaderText = "LOGO";
-            this.Column5.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column9.DataPropertyName = "Email";
+            this.Column9.HeaderText = "Email";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
             // 
-            // Column1
+            // Column8
             // 
-            this.Column1.DataPropertyName = "Name";
-            this.Column1.FillWeight = 112.3097F;
-            this.Column1.HeaderText = "Name";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.Column8.DataPropertyName = "Phone";
+            this.Column8.HeaderText = "PhoneNumber";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
             // 
             // Column3
             // 
@@ -199,21 +195,25 @@
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
-            // Column8
+            // Column1
             // 
-            this.Column8.DataPropertyName = "Phone";
-            this.Column8.HeaderText = "PhoneNumber";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
+            this.Column1.DataPropertyName = "Name";
+            this.Column1.FillWeight = 112.3097F;
+            this.Column1.HeaderText = "Name";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
-            // Column9
+            // Column5
             // 
-            this.Column9.DataPropertyName = "Email";
-            this.Column9.HeaderText = "Email";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
+            this.Column5.DataPropertyName = "Logo";
+            this.Column5.FillWeight = 50.76144F;
+            this.Column5.HeaderText = "LOGO";
+            this.Column5.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // FrmEcoleList
             // 

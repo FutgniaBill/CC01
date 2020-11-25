@@ -76,7 +76,7 @@ namespace CC01.DAL
 
         public void Remove(Etudiant etudiant)
         {
-            etudiants.Remove(etudiant);//base sur Product.Equals redefini
+            etudiants.Remove(etudiant);
             Save();
         }
 
